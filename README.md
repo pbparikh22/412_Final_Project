@@ -12,8 +12,11 @@ Defining the Problem:  the longest path problem is NP-hard and the decision vers
 
 Format Input:
 
-3 3     // this line contains number of vertices and number of lines to read
-0 1 3   // these contains the vertex, destination vertex, and edge weight
+// this line contains number of vertices and number of lines to read
+// the following lines contains the vertex, destination vertex, and edge weight
+
+3 3
+0 1 3
 1 2 3
 2 0 3
 
