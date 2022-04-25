@@ -1,0 +1,12 @@
+#Thomas Rothman NP Project notes
+
+decision problem: does the graph G contain a path of k or more edges?
+
+optimized problem: what is the longest path in graph G
+
+problem input: 
+
+why can't we inverse the weights and run shortest path?
+	solution can be found in linear time if directed acyclic graph using inverse b/c guaranteed to have no negative cycles
+
+show reduction of hamiltonian path to longest path 
