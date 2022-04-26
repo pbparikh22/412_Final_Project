@@ -23,7 +23,7 @@ def main():
     
     # change these values later to be read in from input
     s = 0
-    t = 99
+    t = 100
 
     # start our longest_path_approx from the source node
     # if finding a general longest path, start algorithm from each node
