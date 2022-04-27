@@ -2,6 +2,9 @@
     names: Seth Walter
 
     approximation solution for longest path np-complete
+
+    this is a greedy algorithm that favors longest edge 
+    weights (edges with greatest weight)
 """
 
 
@@ -18,12 +21,13 @@ def main():
             graph[edge[1]] = []
         graph[edge[0]].append((edge[1],edge[2]))
     
+
     for u in graph:
         graph[u].sort(reverse=True, key=lambda v:v[1])
     
     # change these values later to be read in from input
     s = 0
-    t = 100
+    t = num_vertices - 1 # this isn't actually a sink node, just where our graph ends
 
     # start our longest_path_approx from the source node
     # if finding a general longest path, start algorithm from each node
@@ -37,8 +41,9 @@ def main():
         max_weight += path[v][1]
         v = path[v][0]
         max_path.append(str(v))
-    print(" => ".join(max_path))
-    print("approximate max weight of this path is", max_weight)
+    max_path = [int(i) for i in max_path]
+    print("Longest Path:", max_path)
+    print("Longest Path Length:", max_weight)
     
 def longest_path_approx_DFS(graph, v, visited, path, t):
     visited[v] = 0
@@ -63,28 +68,6 @@ def longest_path_approx(graph, s, t):
 
     longest_path_approx_DFS(graph, s, visited, path, t)
     return path
-
-    # BFS approach, doesn't work as well as dfs in some cases
-    """max_weight = 0
-    visited = {}
-    path = {}
-    stack = []
-    stack.append(s)
-    while len(stack) != 0:
-        max_edge = (-1, -1)
-        u = stack.pop()
-        #if u == t:
-            #break
-        for v in graph[u]:
-            if v[0] not in visited:
-                visited[u] = v[0]
-                if v[1] > max_edge[1]:
-                    max_edge = (v[0], v[1])
-        if max_edge[0] != -1:
-            max_weight += max_edge[1]
-            path[u] = max_edge[0]
-            stack.append(max_edge[0])
-    return path, max_weight"""
 
 if __name__ == "__main__":
     main()
