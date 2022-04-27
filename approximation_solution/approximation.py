@@ -45,7 +45,7 @@ def main():
     print("Longest Path:", max_path)
     print("Longest Path Length:", max_weight)
     
-def longest_path_approx_DFS(graph, v, visited, path, t):
+"""def longest_path_approx_DFS(graph, v, visited, path, t):
     visited[v] = 0
     if t in path:
         return True
@@ -58,13 +58,29 @@ def longest_path_approx_DFS(graph, v, visited, path, t):
         isTrue = longest_path_approx_DFS(graph, u[0], visited, path, t)
         if isTrue:
             return True
-    return False
+    return False"""
 
 def longest_path_approx(graph, s, t):
     # Need to make this dfs, its using bfs right now
     # NOTE the ending node is also broken, needs to be fixed to stop if it finds the end node
     visited = {}
+    visited[s] = 0
     path = {}
+    def longest_path_approx_DFS(graph, v, visited, path, t):
+        if t in path:
+            return True
+        for k in path:
+            if t == path[k][0]:
+                return True
+        for u in graph[v]:
+            if u not in visited:
+                visited[u] = 0
+            #if path != None: dont think I need this anymore
+                path[v] = (u[0], u[1])
+                isTrue = longest_path_approx_DFS(graph, u[0], visited, path, t)
+                if isTrue:
+                    return True
+        return False
 
     longest_path_approx_DFS(graph, s, visited, path, t)
     return path
