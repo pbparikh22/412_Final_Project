@@ -1,2 +1,0 @@
-Longest Path: [0, 1, 2]
-Longest Path Length: 6
