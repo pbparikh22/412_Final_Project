@@ -20,6 +20,6 @@
     <li>output2.txt medium (test case 2)</li>
     <li>output3.txt cycle output (test case 3)</li>
     <li>output4.txt largest output (test case 5)</li>
-    <li>output4.txt large output (test case 4)</li>
+    <li>output5.txt large output (test case 4)</li>
 </ul>
 

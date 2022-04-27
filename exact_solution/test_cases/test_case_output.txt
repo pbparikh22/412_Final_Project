@@ -8,9 +8,9 @@ Test Case 1 Input:
 2 0 3
 Test Case 1 Output:
 
-real	0m0.019s
-user	0m0.009s
-sys	0m0.009s
+real	0m0.022s
+user	0m0.021s
+sys	0m0.000s
 Longest path: [0, 1, 2]
 Longest Path Length: 6
 
@@ -26,8 +26,8 @@ Test Case 2 Input:
 4 5 3
 Test Case 2 Output:
 
-real	0m0.019s
-user	0m0.017s
+real	0m0.021s
+user	0m0.021s
 sys	0m0.000s
 Longest path: [0, 1, 2, 5]
 Longest Path Length: 9
@@ -42,9 +42,9 @@ Test Case 3 Input:
 3 0 3
 Test Case 3 Output:
 
-real	0m0.020s
-user	0m0.015s
-sys	0m0.004s
+real	0m0.019s
+user	0m0.011s
+sys	0m0.007s
 Longest path: [0, 1, 2, 3]
 Longest Path Length: 9
 
@@ -113,9 +113,130 @@ Test Case 4 Input:
 
 Test Case 4 Output:
 
-real	0m11.672s
-user	0m11.418s
-sys	0m0.176s
+real	0m10.244s
+user	0m9.586s
+sys	0m0.247s
 Longest path: [0, 1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13, 15, 16, 18, 19, 20, 21, 23, 24, 25, 27, 29]
 Longest Path Length: 1418
 
+Running Test Case 5
+Test Case 5 Input:
+
+50 96
+0 1 95
+0 2 93
+1 2 88
+1 3 9
+2 3 46
+2 4 83
+3 4 10
+3 5 27
+4 5 50
+4 6 60
+5 6 2
+5 7 100
+6 7 28
+6 8 8
+7 8 76
+7 9 2
+8 9 17
+8 10 99
+9 10 92
+9 11 71
+10 11 88
+10 12 83
+11 12 56
+11 13 41
+12 13 94
+12 14 73
+13 14 68
+13 15 11
+14 15 9
+14 16 3
+15 16 98
+15 17 92
+16 17 12
+16 18 18
+17 18 99
+17 19 62
+18 19 11
+18 20 87
+19 20 42
+19 21 80
+20 21 96
+20 22 60
+21 22 48
+21 23 46
+22 23 74
+22 24 82
+23 24 29
+23 25 52
+24 25 19
+24 26 22
+25 26 42
+25 27 42
+26 27 7
+26 28 66
+27 28 53
+27 29 18
+28 29 65
+28 30 12
+29 30 74
+29 31 13
+30 31 18
+30 32 50
+31 32 7
+31 33 63
+32 33 66
+32 34 22
+33 34 70
+33 35 80
+34 35 100
+34 36 5
+35 36 16
+35 37 29
+36 37 89
+36 38 64
+37 38 74
+37 39 54
+38 39 16
+38 40 44
+39 40 74
+39 41 97
+40 41 81
+40 42 5
+41 42 41
+41 43 14
+42 43 82
+42 44 30
+43 44 70
+43 45 84
+44 45 45
+44 46 78
+45 46 77
+45 47 62
+46 47 35
+46 48 28
+47 48 19
+47 49 35
+48 49 46
+
+
+Test Case 5 Output:
+Traceback (most recent call last):
+  File "../exact_solution.py", line 81, in <module>
+    main()
+  File "../exact_solution.py", line 74, in main
+    solution = findLongestPath(graph, findAllPaths(graph, source, sink))
+  File "../exact_solution.py", line 25, in findAllPaths
+    pathFinder(graph, s, t, visited, [])
+  File "../exact_solution.py", line 20, in pathFinder
+    pathFinder(graph, v, t, visited, path)
+  File "../exact_solution.py", line 20, in pathFinder
+    pathFinder(graph, v, t, visited, path)
+  File "../exact_solution.py", line 20, in pathFinder
+    pathFinder(graph, v, t, visited, path)
+  [Previous line repeated 38 more times]
+  File "../exact_solution.py", line 18, in pathFinder
+    for v in graph[s]:
+KeyboardInterrupt
