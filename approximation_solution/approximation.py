@@ -67,6 +67,7 @@ def longest_path_approx(graph, s, t):
     visited[s] = 0
     path = {}
     def longest_path_approx_DFS(graph, v, visited, path, t):
+        #visited[v] = 0
         if t in path:
             return True
         for k in path:

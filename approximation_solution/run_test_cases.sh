@@ -34,5 +34,8 @@ cat test_output.txt
 #cmp test_output.txt output3.txt || echo "TEST 3 FAILED"
 echo
 time python3 approximation.py < ../exact_solution/test_cases/input4.txt > test_output.txt
+cat test_output.txt
+time python3 approximation.py < ../exact_solution/test_cases/generatedInput.txt > test_output.txt
+cat test_output.txt
 
 } > test_case_output.txt
