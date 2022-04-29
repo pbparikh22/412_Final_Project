@@ -1,6 +1,9 @@
 """   
     NP Complete Project Exact Solution
     Author: Nicholas Buchan
+
+    Given a graph starts from a single source and finds the longest path
+    of the graph by finding all the paths and printing the longest path and its length
 """
 
 #Finds all the paths from s to t in the graph
@@ -8,6 +11,7 @@ def findAllPaths(graph, s, t):
     visited = [False] * len(graph)
     simples = []
 
+    #Does DFS to find a path in the graph
     def pathFinder(graph, s, t, visited, path):
         visited[s] = True
         path.append(s)
@@ -24,6 +28,7 @@ def findAllPaths(graph, s, t):
 
     pathFinder(graph, s, t, visited, [])
 
+    #Reutrns a list of lists which represent valid paths in the graph
     return simples
 
 #Loops through all the paths that were found in the graph
@@ -36,7 +41,7 @@ def findLongestPath(graph, paths):
         currentPath = path
         currentPathLength = 0
         for node in range(len(path)):
-
+            #Make sure this is not the last node in the path
             if not node + 1 == len(path): 
                 u = path[node]
                 v = path[node + 1]
@@ -48,10 +53,6 @@ def findLongestPath(graph, paths):
 
 
     return longestPath, longestPathLength
-
-
-
-        
         
 
 def main():
