@@ -11,7 +11,7 @@ import random
 
 def main():
     #Takes in #of Nodes #of Edges
-    number_of_nodes = 35
+    number_of_nodes = 39
     graph = dict()
 
     prev = 0
