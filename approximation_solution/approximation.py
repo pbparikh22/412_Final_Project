@@ -25,7 +25,7 @@ def main():
     for u in graph:
         graph[u].sort(reverse=True, key=lambda v:v[1])
     
-    # change these values later to be read in from input
+    # change these values later to be read in from input if needed
     s = 0
     t = num_vertices - 1 # this isn't actually a sink node, just where our graph ends
 
@@ -44,41 +44,26 @@ def main():
     max_path = [int(i) for i in max_path]
     print("Longest Path:", max_path)
     print("Longest Path Length:", max_weight)
-    
-"""def longest_path_approx_DFS(graph, v, visited, path, t):
-    visited[v] = 0
-    if t in path:
-        return True
-    for k in path:
-        if t == path[k][0]:
-            return True
-    for u in graph[v]:
-        #if path != None: dont think I need this anymore
-        path[v] = (u[0], u[1])
-        isTrue = longest_path_approx_DFS(graph, u[0], visited, path, t)
-        if isTrue:
-            return True
-    return False"""
 
 def longest_path_approx(graph, s, t):
-    # Need to make this dfs, its using bfs right now
-    # NOTE the ending node is also broken, needs to be fixed to stop if it finds the end node
     visited = {}
     visited[s] = 0
     path = {}
     def longest_path_approx_DFS(graph, v, visited, path, t):
-        #visited[v] = 0
+        # checking to see if we find our ending node
         if t in path:
             return True
         for k in path:
             if t == path[k][0]:
                 return True
+        # loop through the edges from node v
         for u in graph[v]:
             if u not in visited:
+                # visit node, set path, make recursive call
                 visited[u] = 0
-            #if path != None: dont think I need this anymore
                 path[v] = (u[0], u[1])
                 isTrue = longest_path_approx_DFS(graph, u[0], visited, path, t)
+                # call back up the stack if 
                 if isTrue:
                     return True
         return False

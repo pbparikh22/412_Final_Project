@@ -37,5 +37,7 @@ time python3 approximation.py < ../exact_solution/test_cases/input4.txt > test_o
 cat test_output.txt
 time python3 approximation.py < ../exact_solution/test_cases/generatedInput.txt > test_output.txt
 cat test_output.txt
+time python3 approximation.py < ../exact_solution/test_cases/input5.txt > test_output.txt
+cat test_output.txt
 
 } > test_case_output.txt
